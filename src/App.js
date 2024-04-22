@@ -1,51 +1,44 @@
 import './App.css';
 import { useEffect, useState } from 'react';
+import Card from './Card';
 
 function App() {
-
-  const [pokemones, setPokemones] = useState([])
+  const [pokemons, setPokemons] = useState([]);
 
   useEffect(() => {
-    const getPokemones = async () => {
-      //GET
-      const response = await fetch('https://pokeapi.co/api/v2/pokemon?limit=20&offset=0')
-      const listPokemones = await response.json()
-      const { results } = listPokemones
+    const getPokemons = async () => {
+      const response = await fetch('https://pokeapi.co/api/v2/pokemon?limit=20&offset=0');
+      const data = await response.json();
+      const { results } = data;
 
-      const newPokemones = results.map(async (pokemon) => {
-        const response = await fetch(pokemon.url)
-        const poke = await response.json()
+      const newPokemons = await Promise.all(results.map(async (pokemon) => {
+        const res = await fetch(pokemon.url);
+        const pokeData = await res.json();
 
         return {
-          id: poke.id,
-          name: poke.name,
-          img: poke.sprites.other.dream_world.front_default
-        }
-      })
+          id: pokeData.id,
+          name: pokeData.name,
+          img: pokeData.sprites.other.dream_world.front_default
+        };
+      }));
 
-      setPokemones(await Promise.all(newPokemones))
-    }
+      setPokemons(newPokemons);
+    };
 
-    getPokemones()
-  }, [])
+    getPokemons();
+  }, []);
 
-  return(
+  return (
     <div className="App">
       <h1>Pokedex</h1>
-
-      {
-        pokemones.map(pokemon => {
-          return (
-            <div>
-              <img src={pokemon.img} alt={pokemon.name} />
-              <p>{pokemon.name}</p>
-              <span>{pokemon.id}</span>
-            </div>
-          )
-        })
-      }
+      <div className="grid-container">
+        {pokemons.map(pokemon => (
+          <Card key={pokemon.id} pokemon={pokemon} />
+        ))}
+      </div>
     </div>
-  )
+  );
 }
 
 export default App;
+

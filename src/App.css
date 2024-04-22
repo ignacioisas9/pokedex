@@ -2,6 +2,53 @@
   text-align: center;
 }
 
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
+}
+
+.card-container {
+  width: 100%;
+  margin-bottom: 20px; /* Add some bottom margin to create space between rows */
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+
+.card {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  overflow: hidden;
+  width: calc(100% - 20px);
+  height: 100%;
+}
+
+.card-body {
+  padding: 10px;
+}
+
+.card-img {
+  text-align: center;
+}
+
+.card-img img {
+  width: 100%; /* Ensure the image fills the width of its container */
+  height: auto; /* Allow the height to adjust to maintain aspect ratio */
+  display: block; /* Ensure the image behaves as a block element */
+}
+
+.card-subtitle {
+  margin-top: 10px;
+  font-size: 16px;
+}
+
+.card-footer {
+  background-color: #f0f0f0;
+  padding: 5px 10px;
+  text-align: center;
+}
+
+
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -35,4 +82,28 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+body * {
+  box-sizing: border-box !important;
+}
+.history-img{
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  object-position: center;
+
+}
+
+.scrolling-wrapper{
+  max-height: 700px !important;
+  flex-wrap: wrap !important;
+  
+}
+
+.card{
+  
+  width: 20%;
+  height: 200px !important;
+  margin: 0;
 }
