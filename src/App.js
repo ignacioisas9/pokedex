@@ -30,7 +30,6 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Pokedex</h1>
       <div className="grid-container">
         {pokemons.map(pokemon => (
           <Card key={pokemon.id} pokemon={pokemon} />

@@ -1,0 +1,32 @@
+.navbar {
+    background-color: #333; /* Darkish color */
+    color: #fff; /* Text color */
+    padding: 10px 20px; /* Padding for the navbar */
+    position: fixed; /* Fixed position */
+    top: 0; /* Stick to the top */
+    width: 100%; /* Full width */
+    display: flex; /* Use flexbox */
+    justify-content: space-between; /* Space elements evenly */
+    align-items: center; /* Center items vertically */
+  }
+  
+  .navbar-nav {
+    list-style-type: none; /* Remove default list styling */
+    margin: 0;
+    padding: 0;
+    display: flex; /* Display items in a row */
+  }
+  
+  .nav-item {
+    margin-left: 10px; /* Margin between items */
+  }
+  
+  .nav-link {
+    color: #fff; /* Text color */
+    text-decoration: none; /* Remove underline */
+  }
+  
+  .nav-link:hover {
+    text-decoration: underline; /* Underline on hover */
+  }
+  
