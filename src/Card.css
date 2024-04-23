@@ -33,6 +33,7 @@
 }
 
 .card-subtitle {
+    background-color: gray;
     margin-top: 10px;
     font-size: 16px;
 }
