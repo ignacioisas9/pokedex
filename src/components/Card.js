@@ -1,5 +1,5 @@
 import React from 'react';
-import './Card.css';
+import '../Card.css';
 
 const Card = ({ pokemon }) => {
   const { id, name, img } = pokemon;
