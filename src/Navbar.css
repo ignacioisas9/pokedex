@@ -1,5 +1,7 @@
 .navbar {
+    background: #000;
     --tw-bg-opacity: 100;
+    z-index: 1;
     color: #fff; /* Text color */
     padding: 10px 20px; /* Padding for the navbar */
     position: fixed; /* Fixed position */

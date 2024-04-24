@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { NavLink, Link } from "react-router-dom";
 import Swal from "sweetalert2";
+import '../Navbar.css';
 
 function fireAlert(event) {
   localStorage.setItem("user", event.target.value)
@@ -54,7 +55,7 @@ const Navbar = () => {
               tabIndex="0"
               className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-primary-color rounded-box w-52"
             >
-              <li>
+              <li className="">
                 <NavLink
                   className="bg-opacity-0 hover:bg-secondary-color hover:text-primary-color"
                   to="/list"
