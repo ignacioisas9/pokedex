@@ -32,10 +32,10 @@ const Navbar = () => {
   }, [])
   return (
     <header>
-      <div className="navbar bg-primary-color">
-        <div className="navbar-start text-secondary-color mr-6">
+      <div className="navbar bg-slate-600">
+        <div className="navbar-start text-secondary-color">
           <div className="dropdown">
-            <label tabIndex="0" className="btn btn-ghost lg:hidden">
+            <label tabIndex="0" className="btn lg:hidden">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-5 w-5"
@@ -53,11 +53,11 @@ const Navbar = () => {
             </label>
             <ul
               tabIndex="0"
-              className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-primary-color rounded-box w-52"
+              className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-slate-600 rounded-box w-52"
             >
               <li className="">
                 <NavLink
-                  className="bg-opacity-0 hover:bg-secondary-color hover:text-primary-color"
+                  className="bg-opacity-0 bg-slate-600"
                   to="/list"
                 >
                   List of Favourites
@@ -74,18 +74,18 @@ const Navbar = () => {
             </div>
           </Link>
         </div>
-        <div className="navbar-end hidden mr-7 lg:flex text-white">
-          <ul className="menu menu-horizontal p-0 mx-3">
+        <div className="navbar-end hidden lg:flex text-white">
+          <ul className="menu menu-horizontal p-0 mx-3 items-center flex">
             <li>
               <NavLink
-                className="m-2 bg-opacity-0 hover:bg-secondary-color hover:text-primary-color text-xl"
+                className="m-2 bg-opacity-0 hover:bg-slate-500 bg-slate-600 text-xl"
                 to="/list"
               >
                 List of Favourites
               </NavLink>
             </li>
             <li>
-              <select name="select" value={user} className="m-2 select select-bordered bg-primary-color text-xl" onChange={(event) => fireAlert(event)}>
+              <select name="select" value={user} className="m-2 w-40 select select-bordered hover:bg-slate-500 bg-slate-600 text-xl" onChange={(event) => fireAlert(event)}>
                 <option value="Ignacio">Ignacio</option>
                 <option value="Federico">Federico</option>
               </select>
