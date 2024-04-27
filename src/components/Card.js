@@ -1,12 +1,16 @@
 import React from 'react';
 
 const Card = ({ pokemon }) => {
-  const { id, name, img } = pokemon;
+  let { id, name, img } = pokemon;
+
+  let capitalizedName =
+    name.charAt(0).toUpperCase()
+    + name.slice(1)
 
   return (
     <div className="bg-white shadow-md rounded-lg overflow-hidden">
       <div className="relative">
-        <img src={img} alt={name} className="w-full h-48 object-fit p-4" />
+        <img src={img} alt={capitalizedName} className="w-full h-48 object-fit p-4" />
         <div className="absolute top-0 right-0 m-2">
           <button className="p-1 text-gray-800 hover:text-yellow-500">
             <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -16,7 +20,7 @@ const Card = ({ pokemon }) => {
         </div>
       </div>
       <div className="p-4">
-        <h6 className="text-lg font-bold">{name}</h6>
+        <h6 className="text-lg font-bold">{capitalizedName}</h6>
       </div>
       <div className="bg-gray-100 p-4">
         <span className="text-gray-600"><i className="fas fa-eye"></i> {id}</span>
