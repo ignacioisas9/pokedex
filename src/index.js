@@ -6,7 +6,7 @@ import Home from './pages/Home';
 // import Create from './pages/Create';
 // import List from './pages/List';
 // import Edit from './pages/Edit';
-// import Error404 from './pages/Error404'
+import Error404 from './pages/Error404'
 import ScrollToTop from './components/ScrollToTop';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -18,8 +18,8 @@ root.render(
         <Route exact path='/' element={<Home />} />
         {/* <Route exact path='/list' element={<List />} />
         <Route exact path='/create' element={<Create />} />
-        <Route exact path='/edit' element={<Edit />} />
-        <Route path='*' element={<Error404 />} /> */}
+        <Route exact path='/edit' element={<Edit />} /> */}
+        <Route path='*' element={<Error404 />} /> 
       </Routes>
     </BrowserRouter>
   </React.StrictMode>
