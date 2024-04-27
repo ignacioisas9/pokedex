@@ -67,7 +67,8 @@ const Navbar = () => {
           </div>
           <Link to="/" state={{ page: "1" }}>
             <div className="flex flex-row items-center">
-              <span className="font-schwifty text-3xl">
+              <span className="flex items-center gap-2 text-3xl">
+                <img className='w-10 block m-auto' src={require("../assets/pokebola.png")} alt='pokebola'/>
                 Pokedex
               </span>
             </div>
@@ -77,14 +78,14 @@ const Navbar = () => {
           <ul className="menu menu-horizontal p-0 mx-3">
             <li>
               <NavLink
-                className="font-mono bg-opacity-0 hover:bg-secondary-color hover:text-primary-color"
+                className="m-2 bg-opacity-0 hover:bg-secondary-color hover:text-primary-color text-xl"
                 to="/list"
               >
                 List of Favourites
               </NavLink>
             </li>
             <li>
-              <select name="select" value={user} className="select select-bordered bg-primary-color font-mono w-40" onChange={(event) => fireAlert(event)}>
+              <select name="select" value={user} className="m-2 select select-bordered bg-primary-color text-xl" onChange={(event) => fireAlert(event)}>
                 <option value="Ignacio">Ignacio</option>
                 <option value="Federico">Federico</option>
               </select>
