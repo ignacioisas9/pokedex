@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { NavLink, Link } from "react-router-dom";
 import Swal from "sweetalert2";
-import '../Navbar.css';
+import '../styles/Navbar.css';
 
 function fireAlert(event) {
   localStorage.setItem("user", event.target.value)
