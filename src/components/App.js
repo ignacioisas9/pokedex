@@ -21,7 +21,7 @@ function App() {
 
   useEffect(() => {
     const getPokemons = async () => {
-      const response = await fetch('https://pokeapi.co/api/v2/pokemon?limit=20&offset=0');
+      const response = await fetch(`https://pokeapi.co/api/v2/pokemon?limit=20&offset=${(pageNumber - 1) * 20}`);
       const data = await response.json();
       const { results } = data;
 
@@ -81,4 +81,3 @@ function App() {
 }
 
 export default App;
-
