@@ -6,7 +6,7 @@ import { FaArrowAltCircleUp } from "react-icons/fa";
 function App() {
   const [pokemons, setPokemons] = useState([]);
 
-  function subirPagina() {
+  function goUp() {
     window.scrollTo({
       top: 0,
       behavior: "smooth",
@@ -49,7 +49,7 @@ function App() {
   if (scrolled) {
     button = (
       <FaArrowAltCircleUp
-        onClick={subirPagina}
+        onClick={goUp}
         className="w-14 h-14 text-white rounded-2xl bg-primary-color fixed bottom-10 right-10 hover:bg-cyan-700 shadow-lg hover:-translate-y-2 transition-transform"
       />
     );
