@@ -36,21 +36,21 @@ function App() {
     getPokemons();
   }, []);
 
-  const [boton, setBoton] = useState(false);
-  const cambiarBoton = () => {
+  const [scrolled, setScrolled] = useState(false);
+  const switchButton = () => {
     if (window.scrollY > 400) {
-      setBoton(true);
+      setScrolled(true);
     } else {
-      setBoton(false);
+      setScrolled(false);
     }
   };
-  window.addEventListener("scroll", cambiarBoton);
+  window.addEventListener("scroll", switchButton);
   let button;
-  if (boton) {
+  if (scrolled) {
     button = (
       <FaArrowAltCircleUp
         onClick={subirPagina}
-        className="w-10 h-10 text-white rounded-2xl bg-primary-color fixed bottom-10 right-10 hover:bg-cyan-700 shadow-lg hover:-translate-y-2 transition-transform"
+        className="w-14 h-14 text-white rounded-2xl bg-primary-color fixed bottom-10 right-10 hover:bg-cyan-700 shadow-lg hover:-translate-y-2 transition-transform"
       />
     );
   } else {
