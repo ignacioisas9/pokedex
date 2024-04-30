@@ -2,16 +2,10 @@ import '../styles/App.css';
 import { useEffect, useState } from 'react';
 import Card from './Card';
 import { FaArrowAltCircleUp } from "react-icons/fa";
+import goUp from '../functions/GoUp';
 
 function App() {
   const [pokemons, setPokemons] = useState([]);
-
-  function goUp() {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
-  }
 
   useEffect(() => {
     const getPokemons = async () => {

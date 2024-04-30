@@ -1,18 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { NavLink, Link } from "react-router-dom";
-import Swal from "sweetalert2";
 import '../styles/Navbar.css';
-
-function fireAlert(event) {
-  localStorage.setItem("user", event.target.value)
-  Swal.fire({
-    icon: 'info',
-    title: `Profile updated to: ${event.target.value}`,
-    showConfirmButton: false,
-    timer: 1500
-  })
-  setTimeout(() => {window.location.reload()}, 1000)
-}
+import fireAlert from "../functions/Alert"
 
 const Navbar = () => {
   const [user,setUser] = useState("");
