@@ -1,11 +1,23 @@
 import '../styles/App.css';
 import { useEffect, useState } from 'react';
-import Card from './Card';
+import { useLocation } from "react-router-dom";
 import { FaArrowAltCircleUp } from "react-icons/fa";
+import Card from './Card';
 import goUp from '../functions/GoUp';
+import Pagination from './Pagination';
+
 
 function App() {
   const [pokemons, setPokemons] = useState([]);
+  const [info, setInfo] = useState([]);
+  const [pageNumber, setPageNumber] = useState(1);
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.state) {
+      setPageNumber(location.state.page);
+    }
+  }, [setPageNumber, location]);
 
   useEffect(() => {
     const getPokemons = async () => {
@@ -58,6 +70,11 @@ function App() {
           <Card key={pokemon.id} pokemon={pokemon} />
         ))}
       </div>
+      <Pagination
+        info={info}
+        pageNumber={pageNumber}
+        setPageNumber={setPageNumber}
+      />
       {button}
     </div>
   );
