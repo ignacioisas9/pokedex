@@ -6,9 +6,8 @@ import '../styles/Navbar.css';
 function fireAlert(event) {
   localStorage.setItem("user", event.target.value)
   Swal.fire({
-    position: 'center',
-    icon: 'success',
-    title: `Perfil actualizado a: ${event.target.value}`,
+    icon: 'info',
+    title: `Profile updated to: ${event.target.value}`,
     showConfirmButton: false,
     timer: 1500
   })
