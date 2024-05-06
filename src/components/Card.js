@@ -1,14 +1,25 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useState } from 'react';
+import { getColorFromUrl } from '../utils/colors.ts';
 
 const Card = ({ pokemon }) => {
+  const [pokemonColor, setPokemonColor] = useState(null)
   let { id, name, img } = pokemon;
+
+  const getPokemonColor = async () => {
+    const color = await getColorFromUrl(pokemon.img)
+    if (color) setPokemonColor(color)
+  }
+
+  useEffect(() => {
+    getPokemonColor()
+  }, [])
 
   let capitalizedName =
     name.charAt(0).toUpperCase()
     + name.slice(1)
-
   return (
-    <div className="bg-emerald-100 shadow-md rounded-lg overflow-hidden">
+    <div className="shadow-md rounded-lg overflow-hidden" style={{ backgroundColor : pokemonColor }}>
       <div className="relative">
         <img src={img} alt={capitalizedName} className="w-full h-80 object-fit p-4" />
         <div className="absolute top-0 right-0 m-2">
@@ -19,7 +30,7 @@ const Card = ({ pokemon }) => {
           </button>
         </div>
       </div>
-      <div className="bg-emerald-400 p-1 flex justify-center">
+      <div className="p-1 flex justify-center">
         {/* <span className="text-gray-600"><i className="fas fa-eye"></i> {id}</span> */}
         <div className="p-2 justify-center">
           <h6 className="text-lg font-bold text-slate-700">{capitalizedName}</h6>
