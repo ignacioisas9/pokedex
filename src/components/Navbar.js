@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { NavLink, Link } from "react-router-dom";
 import '../styles/Navbar.css';
-import fireAlert from "../functions/Alert"
+import fireAlert from "../utils/Alert"
 
 const Navbar = () => {
   const [user,setUser] = useState("");

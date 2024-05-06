@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import ReactPaginate from "react-paginate";
-import goUp from "../functions/GoUp";
+import goUp from "../utils/GoUp";
 
 const Pagination = (props) => {
   let pageChange = (data) => {

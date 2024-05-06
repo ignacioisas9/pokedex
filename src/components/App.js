@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import { useLocation } from "react-router-dom";
 import { FaArrowAltCircleUp } from "react-icons/fa";
 import Card from './Card';
-import goUp from '../functions/GoUp';
+import goUp from '../utils/GoUp';
 import Pagination from './Pagination';
 
 
