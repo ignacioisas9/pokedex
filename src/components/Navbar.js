@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { NavLink, Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import '../styles/Navbar.css';
 import fireAlert from "../utils/Alert"
 
@@ -53,14 +53,14 @@ const Navbar = () => {
               </li>
             </ul>
           </div>
-          <Link to="/" state={{ page: "1" }}>
+          <NavLink to="/" state={{ page: "1" }}>
             <div className="flex flex-row items-center">
               <span className="flex items-center gap-2 text-3xl">
                 <img className='w-10 block m-auto' src={require("../assets/pokebola.png")} alt='pokebola'/>
                 Pokedex
               </span>
             </div>
-          </Link>
+          </NavLink>
         </div>
         <div className="navbar-end hidden lg:flex text-white">
           <ul className="menu menu-horizontal p-0 mx-3 items-center flex">
