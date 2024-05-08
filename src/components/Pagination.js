@@ -4,8 +4,9 @@ import goUp from "../utils/GoUp";
 
 const Pagination = (props) => {
   let pageChange = (data) => {
-    props.setPageNumber(data.selected + 1);
+    props.setPageNumber(props.pageNumber + 1);
     goUp();
+    console.log(data.selected)
   };
 
   const [width, setWidth] = useState(window.innerWidth);
@@ -15,7 +16,7 @@ const Pagination = (props) => {
   useEffect(() => {
     window.addEventListener("resize", updateDimensions);
     return () => window.removeEventListener("resize", updateDimensions);
-  }, []);
+  }, [props.pageNumber]);
   return (
     <ReactPaginate
       previousLabel="«"
@@ -35,6 +36,7 @@ const Pagination = (props) => {
       pageLinkClassName="p-3"
       previousLinkClassName="p-3"
       nextLinkClassName="p-3"
+      onClick={pageChange}
     />
   );
 };

@@ -40,7 +40,7 @@ function App() {
     };
 
     getPokemons();
-  }, []);
+  }, [pageNumber]);
 
   const [scrolled, setScrolled] = useState(false);
   const switchButton = () => {
